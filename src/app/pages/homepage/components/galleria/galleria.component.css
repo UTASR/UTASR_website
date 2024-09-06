@@ -1,0 +1,13 @@
+/* Ensure all images are the same size and maintain a portrait aspect ratio */
+.gallery-image {
+    width: 80vw; /* You can adjust the percentage for the desired width */
+    height: 80vh; /* Set a fixed height for portrait orientation */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+@media (max-width: 768px) {
+    .gallery-image {
+        width: 100%; /* Full width on smaller screens */
+        height: 300px; /* Adjust the height */
+    }
+}
