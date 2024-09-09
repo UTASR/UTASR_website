@@ -1,30 +1,13 @@
-/* Ensure the entire navbar container is a flex container */
-.navbar-container {
-    display: flex;
-    justify-content: space-between; /* Ensures the logo stays left and the menu items right */
-    align-items: center;
-    height: 60px;
-    padding-right: 5%;
-    padding-left: 5%;
-    background-color: #000; /* Change to your background color */
-}
-
-.logo {
-    height: 60px;
-    width: auto; /* Maintains aspect ratio */
-    padding-left: 10px; /* Optional padding */
-}
-
-/* Adjust the menubar alignment */
 :host ::ng-deep p-menubar {
-    display: absolute;
-    justify-content: flex-end; /* Aligns the menu items to the right */
-    flex-grow: 1; /* Allows the menu to take up remaining space */
+    display: absolute; /* Use flexbox to align items */
+    justify-content:center; /* Place logo on the left and menu items on the right */
+    align-items: left; /* Vertically align items */
     height: 60px;
+    width: 100%; /* Ensure it takes the full width */
 }
 
 :host ::ng-deep .p-menuitem {
-    margin-right: 20px; /* Add some spacing between items */
+    margin-left: 20px; /* Add some spacing between menu items */
 }
 
 :host ::ng-deep .p-menuitem-text {
@@ -37,23 +20,13 @@
 
 img {
     height: 60px;
-    width: auto; /* Keeps the image's aspect ratio */
+    width: auto; /* Keep image's aspect ratio */
+    margin-left: 5%; /* Align the logo to the left */
     margin-top: 1%;
     margin-bottom: 1%;
-    text-align: left;
-    padding-right: 60vw;
 }
 
-@media screen and (max-width: 1020px) {
-    :host ::ng-deep .p-menuitem-text {
-        color: black;
-    }
-    :host ::ng-deep .p-menuitem:hover .p-menuitem-text {
-        color: black; /* Change text color on hover */
-    }
-}
-
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 960px) {
     :host ::ng-deep .p-menuitem-text {
         color: black;
     }
@@ -67,6 +40,11 @@ img {
         margin-top: 1%;
         margin-bottom: 1%;
         text-align: left;
-        padding-right: 40vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    :host ::ng-deep p-menubar {
+        justify-content: left;
     }
 }
+
