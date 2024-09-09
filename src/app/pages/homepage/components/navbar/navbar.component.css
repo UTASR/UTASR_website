@@ -1,23 +1,72 @@
-:host ::ng-deep p-menubarsub {
-    width: 500%;
+/* Ensure the entire navbar container is a flex container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Ensures the logo stays left and the menu items right */
+    align-items: center;
+    height: 60px;
     padding-right: 5%;
+    padding-left: 5%;
+    background-color: #000; /* Change to your background color */
 }
 
-:host ::ng-deep .p-menuitem-text { 
+.logo {
+    height: 60px;
+    width: auto; /* Maintains aspect ratio */
+    padding-left: 10px; /* Optional padding */
+}
+
+/* Adjust the menubar alignment */
+:host ::ng-deep p-menubar {
+    display: absolute;
+    justify-content: flex-end; /* Aligns the menu items to the right */
+    flex-grow: 1; /* Allows the menu to take up remaining space */
+    height: 60px;
+}
+
+:host ::ng-deep .p-menuitem {
+    margin-right: 20px; /* Add some spacing between items */
+}
+
+:host ::ng-deep .p-menuitem-text {
     color: white;
 }
 
-:host ::ng-deep :hover {
-    color: Black 
-}
-:host ::ng-deep .p-menuitem {
-    
+:host ::ng-deep .p-menuitem:hover .p-menuitem-text {
+    color: black; /* Change text color on hover */
 }
 
 img {
-    height: 4%;
-    width: 50%;
-    padding-left : 10%;
+    height: 60px;
+    width: auto; /* Keeps the image's aspect ratio */
     margin-top: 1%;
     margin-bottom: 1%;
+    text-align: left;
+    padding-right: 60vw;
+}
+
+@media screen and (max-width: 1020px) {
+    :host ::ng-deep .p-menuitem-text {
+        color: black;
+    }
+    :host ::ng-deep .p-menuitem:hover .p-menuitem-text {
+        color: black; /* Change text color on hover */
+    }
+}
+
+@media screen and (max-width: 560px) {
+    :host ::ng-deep .p-menuitem-text {
+        color: black;
+    }
+    :host ::ng-deep .p-menuitem:hover .p-menuitem-text {
+        color: black; /* Change text color on hover */
+    }
+
+    img {
+        height: 60px;
+        width: auto; /* Keeps the image's aspect ratio */
+        margin-top: 1%;
+        margin-bottom: 1%;
+        text-align: left;
+        padding-right: 40vw;
+    }
 }
