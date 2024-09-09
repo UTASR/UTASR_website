@@ -1,13 +1,24 @@
-:host ::ng-deep p-menubar {
-    display: absolute; /* Use flexbox to align items */
-    justify-content:center; /* Place logo on the left and menu items on the right */
-    align-items: left; /* Vertically align items */
-    height: 60px;
-    width: 100%; /* Ensure it takes the full width */
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-:host ::ng-deep .p-menuitem {
-    margin-left: 20px; /* Add some spacing between menu items */
+.logo {
+    height: 60px; 
+    margin-left: 10px; 
+}
+
+.navbar-right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
 }
 
 :host ::ng-deep .p-menuitem-text {
@@ -15,36 +26,32 @@
 }
 
 :host ::ng-deep .p-menuitem:hover .p-menuitem-text {
-    color: black; /* Change text color on hover */
+    color: black; 
 }
 
-img {
-    height: 60px;
-    width: auto; /* Keep image's aspect ratio */
-    margin-left: 5%; /* Align the logo to the left */
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
 
 @media screen and (max-width: 960px) {
     :host ::ng-deep .p-menuitem-text {
-        color: black;
+        color: rgb(0, 0, 0);
     }
+    
     :host ::ng-deep .p-menuitem:hover .p-menuitem-text {
-        color: black; /* Change text color on hover */
+        color: rgb(152, 152, 152); 
     }
 
-    img {
-        height: 60px;
-        width: auto; /* Keeps the image's aspect ratio */
-        margin-top: 1%;
-        margin-bottom: 1%;
-        text-align: left;
-        margin-left: 5vw;
-        margin-right: 5vw;
+    .navbar-container {
+        display: list-item;
+        flex-direction: row-reverse; 
     }
-    :host ::ng-deep p-menubar {
-        justify-content: left;
+
+    .navbar-right {
+        justify-content: flex-start; 
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-right: 10px;
     }
 }
-
